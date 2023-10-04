@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Stargraph</title>
+</head>
+<body>
+    <section class="socialmedia">
+        <ul class="sci">
+            <li data-text="Facebook" data-color="#110273">
+                <a href="#" class="facebook">
+                    <i class=" fa fa-brands fa-facebook-f" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li data-text="Youtube" data-color="#f21818">
+                <a href="#" class="youtube">
+                    <i class="fa fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li data-text="Instagram" data-color="#f218ce">
+                <a href="#" class="instagram">
+                    <i class="fa fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li data-text="Twitter" data-color="#1877f2">
+                <a href="#" class="twitter">
+                    <i class="fa fa-brands fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <script src="vanilla.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".sci li a"), {
+		max: 25,
+		speed: 400,
+        glare: true,
+        "max-glare": 1,
+	    });
+
+        let list = document.querySelectorAll('.sci li');
+        let bg = document.querySelector('.socialmedia');
+        list.forEach(elements => {
+            elements.addEventListener('mouseenter', function(event) {
+                   let color = event.target.getAttribute
+                   ('data-color');
+                   bg.style.backgroundColor = color;
+            })
+            elements.addEventListener('mouseleave', function(event) {
+                   bg.style.backgroundColor = '#fff';
+            })
+        })
+    </script>
+</body>
+</html>
